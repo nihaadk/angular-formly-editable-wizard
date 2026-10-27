@@ -11,12 +11,17 @@
   "private": true,
   "packageManager": "npm@12.0.2",
   "dependencies": {
+    "@angular/cdk": "^22.2.4",
     "@angular/common": "^22.0.0",
     "@angular/compiler": "^22.0.0",
     "@angular/core": "^22.0.0",
     "@angular/forms": "^22.0.0",
     "@angular/platform-browser": "^22.0.0",
     "@angular/router": "^22.0.0",
+    "@ngx-formly/core": "^11.0.0",
+    "@openng/icons": "^1.0.0",
+    "@openng/optimus-ui": "^2.0.2",
+    "@openng/optimus-ui-themes": "^2.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

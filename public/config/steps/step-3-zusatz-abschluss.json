@@ -1,0 +1,81 @@
+{
+  "label": "Zusatz & Abschluss",
+  "fields": [
+    {
+      "key": "deductible",
+      "type": "select",
+      "props": {
+        "label": "Selbstbeteiligung",
+        "required": true,
+        "placeholder": "Bitte wählen",
+        "options": [
+          {
+            "label": "0 €",
+            "value": 0
+          },
+          {
+            "label": "150 €",
+            "value": 150
+          },
+          {
+            "label": "300 €",
+            "value": 300
+          },
+          {
+            "label": "500 €",
+            "value": 500
+          }
+        ]
+      }
+    },
+    {
+      "key": "legalProtection",
+      "type": "checkbox",
+      "props": {
+        "label": "Rechtsschutz hinzufügen"
+      }
+    },
+    {
+      "key": "legalVariant",
+      "type": "select",
+      "expressions": {
+        "hide": "!model.legalProtection"
+      },
+      "props": {
+        "label": "Rechtsschutz-Variante",
+        "required": true,
+        "placeholder": "Bitte wählen",
+        "options": [
+          {
+            "label": "Privat",
+            "value": "privat"
+          },
+          {
+            "label": "Privat + Beruf",
+            "value": "beruf"
+          },
+          {
+            "label": "Privat + Beruf + Verkehr",
+            "value": "verkehr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "comment",
+      "type": "textarea",
+      "props": {
+        "label": "Anmerkungen (optional)",
+        "rows": 3
+      }
+    },
+    {
+      "key": "acceptTerms",
+      "type": "checkbox",
+      "props": {
+        "label": "Ich akzeptiere die AGB und Datenschutzhinweise",
+        "required": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Versicherungsantrag",
+  "steps": [
+    "config/steps/step-1-persoenliche-daten.json",
+    "config/steps/step-2-versicherungsschutz.json",
+    "config/steps/step-3-zusatz-abschluss.json"
+  ]
+}

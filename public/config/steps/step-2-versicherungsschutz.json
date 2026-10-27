@@ -1,0 +1,99 @@
+{
+  "label": "Versicherungsschutz",
+  "fields": [
+    {
+      "key": "insuranceType",
+      "type": "select",
+      "props": {
+        "label": "Versicherungsart",
+        "required": true,
+        "placeholder": "Bitte wählen",
+        "options": [
+          { "label": "Motorversicherung (Kfz)", "value": "kfz" },
+          { "label": "Hausratversicherung", "value": "hausrat" },
+          { "label": "Haftpflicht", "value": "haftpflicht" },
+          { "label": "Unfall", "value": "unfall" }
+        ]
+      }
+    },
+    {
+      "expressions": { "hide": "model.insuranceType !== 'kfz'" },
+      "fieldGroup": [
+        {
+          "key": "vehicleType",
+          "type": "select",
+          "props": {
+            "label": "Fahrzeugtyp",
+            "required": true,
+            "placeholder": "Bitte wählen",
+            "options": [
+              { "label": "PKW", "value": "pkw" },
+              { "label": "Motorrad", "value": "motorrad" },
+              { "label": "Wohnmobil", "value": "wohnmobil" }
+            ]
+          }
+        },
+        { "key": "licensePlate", "type": "input", "props": { "label": "Kennzeichen", "required": true } },
+        { "key": "vehicleYear", "type": "number", "props": { "label": "Baujahr", "min": 1950, "max": 2030, "useGrouping": false } },
+        {
+          "key": "annualMileage",
+          "type": "select",
+          "props": {
+            "label": "Jährliche Fahrleistung",
+            "placeholder": "Bitte wählen",
+            "options": [
+              { "label": "bis 10.000 km", "value": 10000 },
+              { "label": "bis 20.000 km", "value": 20000 },
+              { "label": "über 20.000 km", "value": 30000 }
+            ]
+          }
+        },
+        { "key": "fullCoverage", "type": "checkbox", "props": { "label": "Vollkasko statt Teilkasko" } }
+      ]
+    },
+    {
+      "expressions": { "hide": "model.insuranceType !== 'hausrat'" },
+      "fieldGroup": [
+        {
+          "key": "dwellingType",
+          "type": "select",
+          "props": {
+            "label": "Wohnungstyp",
+            "required": true,
+            "placeholder": "Bitte wählen",
+            "options": [
+              { "label": "Wohnung", "value": "wohnung" },
+              { "label": "Einfamilienhaus", "value": "haus" }
+            ]
+          }
+        },
+        { "key": "livingArea", "type": "number", "props": { "label": "Wohnfläche (m²)", "required": true, "min": 10, "max": 1000 } },
+        { "key": "postalCode", "type": "input", "props": { "label": "Postleitzahl", "required": true } },
+        { "key": "hasBicycles", "type": "checkbox", "props": { "label": "Fahrräder mitversichern" } },
+        {
+          "key": "bicycleValue",
+          "type": "number",
+          "expressions": { "hide": "!model.hasBicycles" },
+          "props": { "label": "Gesamtwert der Fahrräder (€)", "required": true, "min": 0 }
+        }
+      ]
+    },
+    { "key": "hasPet", "type": "checkbox", "props": { "label": "Ich habe ein Haustier" } },
+    {
+      "key": "petType",
+      "type": "select",
+      "expressions": { "hide": "!model.hasPet" },
+      "props": {
+        "label": "Tierart",
+        "required": true,
+        "placeholder": "Bitte wählen",
+        "options": [
+          { "label": "Hund", "value": "hund" },
+          { "label": "Katze", "value": "katze" },
+          { "label": "Pferd", "value": "pferd" },
+          { "label": "Sonstiges", "value": "sonstiges" }
+        ]
+      }
+    }
+  ]
+}

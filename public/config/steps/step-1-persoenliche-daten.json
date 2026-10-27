@@ -1,0 +1,76 @@
+{
+  "label": "Persönliche Daten",
+  "fields": [
+    {
+      "fieldGroupClassName": "grid gap-4 sm:grid-cols-2",
+      "fieldGroup": [
+        {
+          "key": "salutation",
+          "type": "select",
+          "props": {
+            "label": "Anrede",
+            "required": true,
+            "placeholder": "Bitte wählen",
+            "options": [
+              {
+                "label": "Frau",
+                "value": "frau"
+              },
+              {
+                "label": "Herr",
+                "value": "herr"
+              },
+              {
+                "label": "Divers",
+                "value": "divers"
+              }
+            ]
+          }
+        },
+        {
+          "key": "birthDate",
+          "type": "input",
+          "props": {
+            "label": "Geburtsdatum",
+            "type": "date",
+            "required": true
+          }
+        },
+        {
+          "key": "firstName",
+          "type": "input",
+          "props": {
+            "label": "Vorname",
+            "required": true
+          }
+        },
+        {
+          "key": "lastName",
+          "type": "input",
+          "props": {
+            "label": "Nachname",
+            "required": true
+          }
+        },
+        {
+          "key": "email",
+          "type": "input",
+          "props": {
+            "label": "E-Mail",
+            "type": "email",
+            "required": true,
+            "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+          }
+        },
+        {
+          "key": "phone",
+          "type": "input",
+          "props": {
+            "label": "Telefon (optional)",
+            "type": "tel"
+          }
+        }
+      ]
+    }
+  ]
+}
